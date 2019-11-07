@@ -7,7 +7,7 @@ CHANNELS = [64, 128, 256, 512]
 
 
 def bottleneck(net, channel, is_train, holes=1, c_name='pretrain', stride=1,
-               shortcut_conv=False, key=tf.GraphKeys.GLOBAL_VARIABLES):
+               shortcut_conv=False, key=tf.compat.v1.GraphKeys.GLOBAL_VARIABLES):
     with tf.variable_scope('bottleneck_v2', reuse=tf.AUTO_REUSE):
         # define initializer for weights and biases
         w_initializer = tf.contrib.layers.xavier_initializer()
